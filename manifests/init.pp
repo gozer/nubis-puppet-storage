@@ -53,6 +53,6 @@ define nubis::storage {
     ensure  => present,
     device  => "ceph-storage-$name.ceph-mon.service.consul:/",
     fstype  => "ceph",
-    options => "default,nobootwait",
+    options => "defaults,nobootwait",
   }
 }
