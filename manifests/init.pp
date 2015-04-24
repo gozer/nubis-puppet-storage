@@ -40,19 +40,39 @@ class nubis_storage {
 }
 
 define nubis::storage {
-  package { "ceph-fs-common":
+  package { [ "ceph-fs-common", "ceph-common" ]:
     ensure => latest,
   }
-  
+
   file { ["/data", "/data/$name"]:
     ensure => directory,
   }
-  
+
+  file { "/etc/ceph":
+    ensure => directory,
+  }
+
+  file { "/etc/ceph/ceph.conf":
+    require => File["/etc/ceph"],
+    ensure => present,
+    group => 0,
+    owner => 0,
+    mode => 644,
+    source => "puppet:///modules/nubis_storage/files/ceph.conf",
+  }
+
   mount { "/data/$name":
     require => File["/data/$name"],
     ensure  => present,
-    device  => "ceph-storage-$name.ceph-mon.service.consul:/",
+    device  => "ceph-storage-%%NUBIS_PROJECT%%.ceph-mon.service.consul:/",
     fstype  => "ceph",
     options => "defaults,nobootwait",
   }
+
+  file { "/etc/nubis.d/ceph":
+    ensure => present,
+    group => 0,
+    owner => 0,
+    mode => 755,
+    source => "puppet:///modules/nubis_storage/files/ceph-startup",
 }
