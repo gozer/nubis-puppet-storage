@@ -1,0 +1,27 @@
+#!/bin/bash
+set -x
+
+USER_DATA=`ec2metadata --user-data`
+
+if [ "$USER_DATA" == "unavailable" ]; then
+  echo "No userdata"
+  exit
+fi
+
+eval $USER_DATA
+
+sed -i -e "s/%%NUBIS_PROJECT%%/$NUBIS_PROJECT/g" /etc/ceph/ceph.conf /etc/fstab
+
+CEPH_HEALTH=`ceph health`
+CEPH_HEALTH_STATUS=$?
+
+while [ "$CEPH_HEALTH_STATUS" -ne "0" ]; do
+  echo "Waiting on Ceph health: $CEPH_HEALTH"
+
+  sleep 2
+
+  CEPH_HEALTH=`ceph health`
+  CEPH_HEALTH_STATUS=$?
+done
+
+mount -a -t ceph
