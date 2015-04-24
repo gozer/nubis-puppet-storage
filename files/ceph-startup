@@ -25,3 +25,5 @@ while [ "$CEPH_HEALTH_STATUS" -ne "0" ]; do
 done
 
 mount -a -t ceph
+
+#XXX: Good place here to create the skeleton directory structure in our volume...
