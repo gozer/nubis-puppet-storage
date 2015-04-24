@@ -75,4 +75,5 @@ define nubis::storage {
     owner => 0,
     mode => 755,
     source => "puppet:///modules/nubis_storage/files/ceph-startup",
+  }
 }
