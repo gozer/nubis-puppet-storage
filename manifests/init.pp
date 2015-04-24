@@ -58,7 +58,7 @@ define nubis::storage {
     group => 0,
     owner => 0,
     mode => 644,
-    source => "puppet:///modules/nubis_storage/files/ceph.conf",
+    source => "puppet:///modules/${module_name}/ceph.conf",
   }
 
   mount { "/data/$name":
@@ -74,6 +74,6 @@ define nubis::storage {
     group => 0,
     owner => 0,
     mode => 755,
-    source => "puppet:///modules/nubis_storage/files/ceph-startup",
+    source => "puppet:///modules/${module_name}/ceph-startup",
   }
 }
