@@ -64,7 +64,7 @@ define nubis::storage {
   mount { "/data/$name":
     require => File["/data/$name"],
     ensure  => present,
-    device  => "ceph-storage-%%NUBIS_PROJECT%%.ceph-mon.service.consul:/",
+    device  => "ceph-storage-%%NUBIS_STACK%%.ceph-mon.service.consul:/",
     fstype  => "ceph",
     options => "defaults,nobootwait",
   }
