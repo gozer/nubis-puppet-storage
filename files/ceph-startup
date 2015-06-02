@@ -10,6 +10,7 @@ fi
 
 eval $USER_DATA
 
+sed -i -e "s/%%NUBIS_STACK%%/$NUBIS_STACK/g" /etc/ceph/ceph.conf /etc/fstab
 sed -i -e "s/%%NUBIS_PROJECT%%/$NUBIS_PROJECT/g" /etc/ceph/ceph.conf /etc/fstab
 
 CEPH_HEALTH=`ceph health`
