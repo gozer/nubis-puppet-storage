@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-USER_DATA=`ec2metadata --user-data`
+USER_DATA=`curl -fq http://169.254.169.254/latest/user-data`
 
 if [ "$USER_DATA" == "unavailable" ]; then
   echo "No userdata"
