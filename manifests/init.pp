@@ -42,9 +42,9 @@ class nubis_storage {
 define nubis::storage {
 
   if $::osfamily == 'Debian' {
-  package { [ "ceph-fs-common", "ceph-common" ]:
-    ensure => latest,
-  }
+    package { [ "ceph-fs-common", "ceph-common" ]:
+      ensure => latest,
+    }
   }
 
   file { ["/data", "/data/$name"]:
