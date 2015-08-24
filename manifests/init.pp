@@ -46,6 +46,9 @@ define nubis::storage {
       ensure => latest,
     }
   }
+  elsif $::osname == 'Amazon' {
+    package { "ceph":
+  }
 
   file { ["/data", "/data/$name"]:
     ensure => directory,
