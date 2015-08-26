@@ -69,12 +69,19 @@ define nubis::storage {
     source => "puppet:///modules/${module_name}/ceph.conf",
   }
 
+  if $::osfamily == 'Debian' {
+    $mount_options = "defaults,nobootwait"
+  }
+  else {
+    $mount_options = "defaults"
+  }
+
   mount { "/data/$name":
     require => File["/data/$name"],
     ensure  => present,
     device  => "ceph-storage-%%NUBIS_STACK%%.ceph-mon.service.consul:/",
     fstype  => "ceph",
-    options => "defaults,nobootwait",
+    options => $mount_options,
   }
 
   file { "/etc/nubis.d/ceph":
