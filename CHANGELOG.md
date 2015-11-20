@@ -1,50 +1,50 @@
 # Change Log
 
-## [v1.0.0](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.0.0) (2015-08-30)
-
-[Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v0.9.0...v1.0.0)
+## [v1.0.1](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.0.1) (2015-11-20)
+[Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v1.0.0...v1.0.1)
 
 **Closed issues:**
 
-- /usr/bin/ceph on Amazon Linux uses the wrong Python \(should be 2.6\) [\#21](https://github.com/Nubisproject/nubis-puppet-storage/issues/21)
+- Tag  release [\#24](https://github.com/nubisproject/nubis-puppet-storage/issues/24)
+- Tag release [\#14](https://github.com/nubisproject/nubis-puppet-storage/issues/14)
 
-- nobootwait in /etc/fstab is an Ubuntu-ism [\#19](https://github.com/Nubisproject/nubis-puppet-storage/issues/19)
+## [v1.0.0](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.0.0) (2015-08-30)
+[Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v0.1.0...v1.0.0)
 
-- \[amazon-linux\] No need to install ceph-fs-common, it's supported in-kernel [\#15](https://github.com/Nubisproject/nubis-puppet-storage/issues/15)
+**Closed issues:**
+
+- /usr/bin/ceph on Amazon Linux uses the wrong Python \(should be 2.6\) [\#21](https://github.com/nubisproject/nubis-puppet-storage/issues/21)
+- nobootwait in /etc/fstab is an Ubuntu-ism [\#19](https://github.com/nubisproject/nubis-puppet-storage/issues/19)
+- Tag v1.0.0 release [\#13](https://github.com/nubisproject/nubis-puppet-storage/issues/13)
 
 **Merged pull requests:**
 
-- Fix the incorrect shebang line on ceph binary scripts to use python26 [\#22](https://github.com/Nubisproject/nubis-puppet-storage/pull/22) ([gozer](https://github.com/gozer))
+- Update CHANGELOG for v1.0.0 [\#23](https://github.com/nubisproject/nubis-puppet-storage/pull/23) ([gozer](https://github.com/gozer))
+- Fix the incorrect shebang line on ceph binary scripts to use python26 [\#22](https://github.com/nubisproject/nubis-puppet-storage/pull/22) ([gozer](https://github.com/gozer))
+- nobootwait is an Ubuntu-ism [\#20](https://github.com/nubisproject/nubis-puppet-storage/pull/20) ([gozer](https://github.com/gozer))
+- tyop-- [\#18](https://github.com/nubisproject/nubis-puppet-storage/pull/18) ([gozer](https://github.com/gozer))
+- AmazonLinux has ceph CLI tools available, we need them for startup health checks [\#17](https://github.com/nubisproject/nubis-puppet-storage/pull/17) ([gozer](https://github.com/gozer))
+- Only install Debian packages for Ceph on, well, debian. [\#16](https://github.com/nubisproject/nubis-puppet-storage/pull/16) ([gozer](https://github.com/gozer))
 
-- nobootwait is an Ubuntu-ism [\#20](https://github.com/Nubisproject/nubis-puppet-storage/pull/20) ([gozer](https://github.com/gozer))
+## [v0.1.0](https://github.com/nubisproject/nubis-puppet-storage/tree/v0.1.0) (2015-08-21)
+[Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v0.9.0...v0.1.0)
 
-- tyop-- [\#18](https://github.com/Nubisproject/nubis-puppet-storage/pull/18) ([gozer](https://github.com/gozer))
+**Closed issues:**
 
-- AmazonLinux has ceph CLI tools available, we need them for startup health checks [\#17](https://github.com/Nubisproject/nubis-puppet-storage/pull/17) ([gozer](https://github.com/gozer))
-
-- Only install Debian packages for Ceph on, well, debian. [\#16](https://github.com/Nubisproject/nubis-puppet-storage/pull/16) ([gozer](https://github.com/gozer))
+- \[amazon-linux\] No need to install ceph-fs-common, it's supported in-kernel [\#15](https://github.com/nubisproject/nubis-puppet-storage/issues/15)
 
 ## [v0.9.0](https://github.com/nubisproject/nubis-puppet-storage/tree/v0.9.0) (2015-07-22)
-
 **Merged pull requests:**
 
-- Updating changelog for v0.9.0 release [\#11](https://github.com/Nubisproject/nubis-puppet-storage/pull/11) ([gozer](https://github.com/gozer))
-
-- use curl instead of ec2metadata [\#8](https://github.com/Nubisproject/nubis-puppet-storage/pull/8) ([gozer](https://github.com/gozer))
-
-- add metadata.json [\#7](https://github.com/Nubisproject/nubis-puppet-storage/pull/7) ([gozer](https://github.com/gozer))
-
-- Switch to NUBIS\_STACK from NUBIS\_PROJECT [\#6](https://github.com/Nubisproject/nubis-puppet-storage/pull/6) ([gozer](https://github.com/gozer))
-
-- fix file paths [\#5](https://github.com/Nubisproject/nubis-puppet-storage/pull/5) ([gozer](https://github.com/gozer))
-
-- tyop fix [\#4](https://github.com/Nubisproject/nubis-puppet-storage/pull/4) ([gozer](https://github.com/gozer))
-
-- Add and configure the ceph CLI so we can inspect cluster state [\#3](https://github.com/Nubisproject/nubis-puppet-storage/pull/3) ([gozer](https://github.com/gozer))
-
-- Fix typo [\#2](https://github.com/Nubisproject/nubis-puppet-storage/pull/2) ([gozer](https://github.com/gozer))
-
-- Add initial working puppet class [\#1](https://github.com/Nubisproject/nubis-puppet-storage/pull/1) ([gozer](https://github.com/gozer))
+- Updating changelog for v0.9.0 release [\#11](https://github.com/nubisproject/nubis-puppet-storage/pull/11) ([gozer](https://github.com/gozer))
+- use curl instead of ec2metadata [\#8](https://github.com/nubisproject/nubis-puppet-storage/pull/8) ([gozer](https://github.com/gozer))
+- add metadata.json [\#7](https://github.com/nubisproject/nubis-puppet-storage/pull/7) ([gozer](https://github.com/gozer))
+- Switch to NUBIS\_STACK from NUBIS\_PROJECT [\#6](https://github.com/nubisproject/nubis-puppet-storage/pull/6) ([gozer](https://github.com/gozer))
+- fix file paths [\#5](https://github.com/nubisproject/nubis-puppet-storage/pull/5) ([gozer](https://github.com/gozer))
+- tyop fix [\#4](https://github.com/nubisproject/nubis-puppet-storage/pull/4) ([gozer](https://github.com/gozer))
+- Add and configure the ceph CLI so we can inspect cluster state [\#3](https://github.com/nubisproject/nubis-puppet-storage/pull/3) ([gozer](https://github.com/gozer))
+- Fix typo [\#2](https://github.com/nubisproject/nubis-puppet-storage/pull/2) ([gozer](https://github.com/gozer))
+- Add initial working puppet class [\#1](https://github.com/nubisproject/nubis-puppet-storage/pull/1) ([gozer](https://github.com/gozer))
 
 
 
