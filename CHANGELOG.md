@@ -1,5 +1,13 @@
 # Change Log
 
+## [v1.1.0](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.1.0) (2016-04-18)
+[Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v1.0.1...v1.1.0)
+
+**Closed issues:**
+
+- Tag v1.0.1 release [\#25](https://github.com/nubisproject/nubis-puppet-storage/issues/25)
+- Tag v1.1.0 release [\#12](https://github.com/nubisproject/nubis-puppet-storage/issues/12)
+
 ## [v1.0.1](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.0.1) (2015-11-20)
 [Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v1.0.0...v1.0.1)
 
@@ -7,6 +15,10 @@
 
 - Tag  release [\#24](https://github.com/nubisproject/nubis-puppet-storage/issues/24)
 - Tag release [\#14](https://github.com/nubisproject/nubis-puppet-storage/issues/14)
+
+**Merged pull requests:**
+
+- Update CHANGELOG for v1.0.1 release [\#26](https://github.com/nubisproject/nubis-puppet-storage/pull/26) ([tinnightcap](https://github.com/tinnightcap))
 
 ## [v1.0.0](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.0.0) (2015-08-30)
 [Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v0.1.0...v1.0.0)
