@@ -7,6 +7,11 @@
 
 - Tag v1.0.1 release [\#25](https://github.com/nubisproject/nubis-puppet-storage/issues/25)
 - Tag v1.1.0 release [\#12](https://github.com/nubisproject/nubis-puppet-storage/issues/12)
+- Tag v1.1.0 release [\#27](https://github.com/nubisproject/nubis-puppet-storage/issues/27)
+
+**Merged pull requests:**
+
+- Update CHANGELOG for v1.1.0 release [\#28](https://github.com/nubisproject/nubis-puppet-storage/pull/28) ([tinnightcap](https://github.com/tinnightcap))
 
 ## [v1.0.1](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.0.1) (2015-11-20)
 [Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v1.0.0...v1.0.1)
