@@ -11,7 +11,7 @@ NUBIS_STACK=$(nubis-metadata NUBIS_STACK)
 NUBIS_ENVIRONMENT=$(nubis-metadata NUBIS_ENVIRONMENT)
 CONSUL_PREFIX="$NUBIS_STACK/$NUBIS_ENVIRONMENT"
 
-EFS_ID=$(consulate kv get $CONSUL_PREFIX/config/storage/$EFS_NAME/fsid)
+EFS_ID=$(consulate kv get "$CONSUL_PREFIX/config/storage/$EFS_NAME/fsid")
 
 TARGET="$AVAILABILITY_ZONE.$EFS_ID.efs.$REGION.amazonaws.com"
 
@@ -19,5 +19,5 @@ echo "Mounting EFS:$EFS_ID on $MOUNTPOINT"
 
 mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 "$TARGET:/" "$MOUNTPOINT"
 
-chown <%= @owner %>:<%= @group %> $MOUNTPOINT
-chmod <%= @mode %> $MOUNTPOINT
+chown "<%= @owner %>:<%= @group %>" "$MOUNTPOINT"
+chmod "<%= @mode %>" "$MOUNTPOINT"
