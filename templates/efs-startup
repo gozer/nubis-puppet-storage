@@ -13,7 +13,7 @@ CONSUL_PREFIX="$NUBIS_STACK/$NUBIS_ENVIRONMENT"
 
 EFS_ID=$(consulate kv get $CONSUL_PREFIX/config/storage/$EFS_NAME/fsid)
 
-TARGET="$AVAILABILITY_ZONE.$EFS_ID.$REGION.amazonaws.com"
+TARGET="$AVAILABILITY_ZONE.$EFS_ID.efs.$REGION.amazonaws.com"
 
 echo "Mounting EFS:$EFS_ID on $MOUNTPOINT"
 
