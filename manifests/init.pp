@@ -44,6 +44,12 @@ class nubis_storage {
 }
 
 define nubis::storage($type="ceph") {
+
+  # Create the mountpoint
+  file { ["/data", "/data/$name"]:
+    ensure => directory,
+  }
+
   case $type {
     'ceph': { 
       nubis::storage::ceph { "$name": }
@@ -89,10 +95,6 @@ define nubis::storage::ceph {
       command => "sed -i -e '1c#!/usr/bin/env python26' /usr/bin/ceph*",
       require => Package["ceph"],
     }
-  }
-
-  file { ["/data", "/data/$name"]:
-    ensure => directory,
   }
 
   file { "/etc/ceph":
