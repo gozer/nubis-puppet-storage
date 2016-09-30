@@ -43,11 +43,14 @@ nubis::storage { "gozer":
 class nubis_storage {
 }
 
-define nubis::storage($type="ceph") {
+define nubis::storage($type="ceph", $owner="root", $group="root", $mode="0755" ) {
 
   # Create the mountpoint
   file { ["/data", "/data/$name"]:
     ensure => directory,
+    owner => $owner,
+    group => $group,
+    mode  => $mode,
   }
 
   case $type {
@@ -55,7 +58,11 @@ define nubis::storage($type="ceph") {
       nubis::storage::ceph { "$name": }
     }
     'efs': {
-      nubis::storage::efs { "$name": }
+      nubis::storage::efs { "$name":
+        owner => $owner,
+        group => $group,
+        mode  => $mode,
+      }
     }
     default: {
       fail("Unsupported storage type : '$type'")
@@ -64,7 +71,7 @@ define nubis::storage($type="ceph") {
 
 }
 
-define nubis::storage::efs {
+define nubis::storage::efs($owner, $group, $mode) {
   notice("Using EFS")
   class {'nfs::client':
   }
