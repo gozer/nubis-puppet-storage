@@ -8,5 +8,9 @@
   "project_page": null,
   "issues_url": null,
   "dependencies": [
+    {
+      "name": "echocat/nfs",
+      "version_requirement": "1.5.0"
+    }
   ]
 }

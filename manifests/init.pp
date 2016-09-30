@@ -36,11 +36,45 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 
+nubis::storage { "gozer":
+  type => "efs"
+}
+
 class nubis_storage {
 }
 
-define nubis::storage {
+define nubis::storage($type="ceph") {
+  case $type {
+    'ceph': { 
+      nubis::storage::ceph { "$name": }
+    }
+    'efs': {
+      nubis::storage::efs { "$name": }
+    }
+    default: {
+      fail("Unsupported storage type : '$type'")
+    }
+  }
 
+}
+
+define nubis::storage::efs {
+  notice("Using EFS")
+  class {'nfs::client':
+  }
+
+  file { "/etc/nubis.d/efs-${name}":
+    ensure => present,
+    group => 0,
+    owner => 0,
+    mode => 755,
+    content => template("${module_name}/efs-startup"),
+  }
+
+}
+
+define nubis::storage::ceph {
+  notice("Using Ceph")
   if $::osfamily == 'Debian' {
     package { [ "ceph-fs-common", "ceph-common" ]:
       ensure => latest,
