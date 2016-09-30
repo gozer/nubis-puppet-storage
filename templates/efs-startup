@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -x
+
+EFS_NAME="<%= @name %>"
+MOUNTPOINT="/data/$EFS_NAME"
+AVAILABILITY_ZONE=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
+REGION=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq '.region' -r)
+
+EFS_ID="unknown"
+
+TARGET="$AVAILABILITY_ZONE.$EFS_ID.$REGION.amazonaws.com"
+
+echo "Mounting EFS:$EFS_ID on $MOUNTPOINT"
+
+mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 "$TARGET:/" "$MOUNTPOINT"
