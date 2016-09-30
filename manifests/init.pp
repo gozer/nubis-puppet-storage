@@ -69,7 +69,8 @@ define nubis::storage::efs {
   class {'nfs::client':
   }
 
-  file { "/etc/nubis.d/efs-${name}":
+  # make sure we run right after Consul is up, before confd and others
+  file { "/etc/nubis.d/01-efs-${name}":
     ensure => present,
     group => 0,
     owner => 0,
