@@ -1,5 +1,27 @@
 # Change Log
 
+## [v1.2.2](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.2.2) (2016-10-01)
+[Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v1.2.1...v1.2.2)
+
+**Closed issues:**
+
+- Tag v1.2.3 release [\#33](https://github.com/nubisproject/nubis-puppet-storage/issues/33)
+
+**Merged pull requests:**
+
+- \[efs\] Add support for EFS as a storage flavor [\#34](https://github.com/nubisproject/nubis-puppet-storage/pull/34) ([gozer](https://github.com/gozer))
+
+## [v1.2.1](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.2.1) (2016-07-30)
+[Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v1.2.0...v1.2.1)
+
+**Closed issues:**
+
+- Tag v1.2.1 release [\#31](https://github.com/nubisproject/nubis-puppet-storage/issues/31)
+
+**Merged pull requests:**
+
+- Update CHANGELOG for v1.2.1 release [\#32](https://github.com/nubisproject/nubis-puppet-storage/pull/32) ([tinnightcap](https://github.com/tinnightcap))
+
 ## [v1.2.0](https://github.com/nubisproject/nubis-puppet-storage/tree/v1.2.0) (2016-07-07)
 [Full Changelog](https://github.com/nubisproject/nubis-puppet-storage/compare/v1.1.0...v1.2.0)
 
