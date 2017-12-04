@@ -36,10 +36,6 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 
-nubis::storage { "gozer":
-  type => "efs"
-}
-
 class nubis_storage {
 }
 
@@ -81,7 +77,7 @@ define nubis::storage::efs($owner, $group, $mode) {
     ensure => present,
     group => 0,
     owner => 0,
-    mode => 755,
+    mode => '0755',
     content => template("${module_name}/efs-startup"),
   }
 
@@ -114,7 +110,7 @@ define nubis::storage::ceph {
     ensure => present,
     group => 0,
     owner => 0,
-    mode => 644,
+    mode => '0644',
     source => "puppet:///modules/${module_name}/ceph.conf",
   }
 
@@ -137,7 +133,7 @@ define nubis::storage::ceph {
     ensure => present,
     group => 0,
     owner => 0,
-    mode => 755,
+    mode => '0755',
     source => "puppet:///modules/${module_name}/ceph-startup",
   }
 }
