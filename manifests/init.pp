@@ -36,10 +36,6 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 
-nubis::storage { "gozer":
-  type => "efs"
-}
-
 class nubis_storage {
 }
 
