@@ -4,7 +4,6 @@ set -x
 
 EFS_NAME="<%= @name %>"
 MOUNTPOINT="/data/$EFS_NAME"
-AVAILABILITY_ZONE=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
 REGION=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq '.region' -r)
 
 NUBIS_STACK=$(nubis-metadata NUBIS_STACK)
@@ -13,7 +12,7 @@ CONSUL_PREFIX="$NUBIS_STACK/$NUBIS_ENVIRONMENT"
 
 EFS_ID=$(consulate kv get "$CONSUL_PREFIX/config/storage/$EFS_NAME/fsid")
 
-TARGET="$AVAILABILITY_ZONE.$EFS_ID.efs.$REGION.amazonaws.com"
+TARGET="$EFS_ID.efs.$REGION.amazonaws.com"
 
 echo "Mounting EFS:$EFS_ID on $MOUNTPOINT"
 
