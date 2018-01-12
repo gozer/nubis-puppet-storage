@@ -21,3 +21,11 @@ mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=
 
 chown "<%= @owner %>:<%= @group %>" "$MOUNTPOINT"
 chmod "<%= @mode %>" "$MOUNTPOINT"
+
+# Record Prometheus Metric for EFS
+METRICS="/var/lib/node_exporter/metrics/nubis_storage-efs-$EFS_NAME.prom"
+
+cat <<EOF > "$METRICS"
+# HELP nubis_efs Metric created by nubis-puppet-storage
+nubis_efs{efs_id="$EFS_ID",efs_name="$EFS_NAME",mountpoint="$MOUNTPOINT"} 1
+EOF
